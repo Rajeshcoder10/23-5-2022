@@ -1,0 +1,20 @@
+#binary search
+def bis(arr,k,low,high):
+    if low>high:
+        return -1
+    else:
+        mid=(low+high)//2
+        if k==arr[mid]:
+            return mid
+        elif k>arr[mid]:
+            return bis(arr,k,mid+1,high)
+        elif k<arr[mid]:
+            return bis(arr,k,low,mid-1)
+        else:
+            return -1
+
+
+arr=[1,2,3,4,5,6,7]
+k=4
+res=bis(arr,k,0,len(arr)-1)
+print(res)
